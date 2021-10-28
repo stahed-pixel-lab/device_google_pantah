@@ -19,6 +19,10 @@ include device/google/gs201/common.mk
 # PixelParts 
 include packages/apps/PixelParts/device.mk
 
+# EUICC
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/permissions/permissions_com.google.android.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/permissions_com.google.android.euicc.xml
+
 # Overlays
 PRODUCT_PACKAGES += \
     FrameworkResOverlayProductPantah \
