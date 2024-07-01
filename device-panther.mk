@@ -192,7 +192,7 @@ PRODUCT_COPY_FILES += \
 
 # LE Audio Unicast Allowlist
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.leaudio.allow_list=SM-R510
+    persist.bluetooth.leaudio.allow_list=SM-R510,WF-1000XM5
 
 # Support LE & Classic concurrent encryption (b/330704060)
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -306,7 +306,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=58
+    ro.vendor.build.svn=59
 
 # DCK properties based on target
 PRODUCT_PROPERTY_OVERRIDES += \
