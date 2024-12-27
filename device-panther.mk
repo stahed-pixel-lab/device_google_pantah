@@ -216,6 +216,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.leaudio.allow_list=SM-R510,WF-1000XM5,SM-R630
 
+# Disable Bluetooth HAP by default
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.profile.hap.enabled_by_default=false
+
 # Support LE & Classic concurrent encryption (b/330704060)
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.ble.allow_enc_with_bredr=true
