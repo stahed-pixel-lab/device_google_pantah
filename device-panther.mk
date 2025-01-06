@@ -117,7 +117,7 @@ PRODUCT_PACKAGES += \
 SHARED_MODEM_PLATFORM_VENDOR := lassen
 
 # Shared Modem Platform
-include device/google/gs-common/modem/shared_modem_platform/shared_modem_platform.mk
+include device/google/gs-common/modem/modem_svc_sit/shared_modem_platform.mk
 
 # SecureElement
 PRODUCT_PACKAGES += \
@@ -214,7 +214,11 @@ PRODUCT_COPY_FILES += \
 
 # LE Audio Unicast Allowlist
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.leaudio.allow_list=SM-R510,WF-1000XM5
+    persist.bluetooth.leaudio.allow_list=SM-R510,WF-1000XM5,SM-R630
+
+# Disable Bluetooth HAP by default
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.profile.hap.enabled_by_default=false
 
 # Support LE & Classic concurrent encryption (b/330704060)
 PRODUCT_PRODUCT_PROPERTIES += \
