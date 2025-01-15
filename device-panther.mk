@@ -220,6 +220,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.profile.hap.enabled_by_default=false
 
+# Disable Bluetooth LE Audio toggle for ASHA device
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.leaudio.toggle_visible_for_asha=false
+
 # Support LE & Classic concurrent encryption (b/330704060)
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.ble.allow_enc_with_bredr=true
