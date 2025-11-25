@@ -15,8 +15,20 @@ DEVICE_PACKAGE_OVERLAYS += device/google/pantah/cheetah/overlay-lineage
 DEVICE_PACKAGE_OVERLAYS += device/google/pantah/overlay-lineage
 
 include device/google/gs201/device-shipping-common.mk
-include device/google/gs-common/bcmbt/bluetooth.mk
-include device/google/gs-common/touch/syna/syna0.mk
+
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth.prebuilt.xml \
+    android.hardware.bluetooth_le.prebuilt.xml
+
+DEVICE_MANIFEST_FILE += device/google/gs-common/bcmbt/manifest_bluetooth.xml
+DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/google/gs-common/bcmbt/compatibility_matrix.xml
+
+# Touch
+PRODUCT_PACKAGES += \
+    dump_syna.sh
+
+PRODUCT_VENDOR_PROPERTIES += ro.vendor.touch.dump.sys=/sys/class/spi_master/spi0/spi0.0/synaptics_tcm.0/sysfs
 
 # UWB
 PRODUCT_COPY_FILES += \
@@ -59,7 +71,7 @@ PRODUCT_PACKAGES += \
 	NfcOverlayCheetah
 
 # Shared Modem Platform
-include device/google/gs-common/modem/modem_svc_sit/shared_modem_platform.mk
+DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/google/gs-common/modem/modem_svc_sit/compatibility_matrix.xml
 
 # SecureElement
 PRODUCT_PACKAGES += \
@@ -301,4 +313,4 @@ PRODUCT_PACKAGES += \
     sensors.dynamic_sensor_hal
 
 # Wireless charging
-include device/google/gs-common/wireless_charger/wireless_charger.mk
+DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/google/gs-common/wireless_charger/compatibility_matrix.xml
