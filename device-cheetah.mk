@@ -25,9 +25,6 @@ DEVICE_MANIFEST_FILE += device/google/gs-common/bcmbt/manifest_bluetooth.xml
 DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/google/gs-common/bcmbt/compatibility_matrix.xml
 
 # Touch
-PRODUCT_PACKAGES += \
-    dump_syna.sh
-
 PRODUCT_VENDOR_PROPERTIES += ro.vendor.touch.dump.sys=/sys/class/spi_master/spi0/spi0.0/synaptics_tcm.0/sysfs
 
 # UWB
@@ -160,11 +157,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
        audio.spatializer.effect.util_clamp_min=300
 
-# PowerStats HAL
-PRODUCT_SOONG_NAMESPACES += \
-    device/google/pantah/powerstats/cheetah \
-    device/google/pantah
-
 PRODUCT_PACKAGES += \
     UwbOverlayC10 \
     WifiOverlay2022_C10
@@ -278,10 +270,6 @@ PRODUCT_PACKAGES += \
     libEGL_angle \
     libGLESv1_CM_angle \
     libGLESv2_angle
-
-# Dumpstate
-PRODUCT_PACKAGES += \
-    dump_gsc.sh
 
 # EUICC
 PRODUCT_COPY_FILES += \

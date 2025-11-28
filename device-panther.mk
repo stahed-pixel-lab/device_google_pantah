@@ -24,10 +24,6 @@ PRODUCT_PACKAGES += \
 DEVICE_MANIFEST_FILE += device/google/gs-common/bcmbt/manifest_bluetooth.xml
 DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/google/gs-common/bcmbt/compatibility_matrix.xml
 
-# Touch
-PRODUCT_PACKAGES += \
-    dump_focaltech.sh
-
 # Recovery files
 PRODUCT_COPY_FILES += \
     device/google/pantah/recovery/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.panther.rc
@@ -142,11 +138,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # optimize spatializer effect
 PRODUCT_PROPERTY_OVERRIDES += \
        audio.spatializer.effect.util_clamp_min=300
-
-# PowerStats HAL
-PRODUCT_SOONG_NAMESPACES += \
-    device/google/pantah/powerstats/panther \
-    device/google/pantah
 
 # Display
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.set_idle_timer_ms=1500
@@ -264,10 +255,6 @@ PRODUCT_PACKAGES += \
     libEGL_angle \
     libGLESv1_CM_angle \
     libGLESv2_angle
-
-# Dumpstate
-PRODUCT_PACKAGES += \
-    dump_gsc.sh
 
 # EUICC
 PRODUCT_COPY_FILES += \
