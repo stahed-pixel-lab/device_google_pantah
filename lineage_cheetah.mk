@@ -7,6 +7,16 @@
 # Inherit some common stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+#Face unlock 
+$(call inherit-product-if-exists, vendor/google/faceunlock/config.mk)
+
+#Fingerprint
+TARGET_HAS_UDFPS := true
+
+#Camera
+$(call inherit-product-if-exists, vendor/google/camera/config.mk)
+
+
 # Inherit device configuration
 DEVICE_CODENAME := cheetah
 DEVICE_PATH := device/google/pantah
