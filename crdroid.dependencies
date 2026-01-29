@@ -16,6 +16,6 @@
   {
     "repository": "LineageOS/android_device_google_pantah-kernels",
     "target_path": "device/google/pantah-kernels",
-    "branch": "lineage-23.1"
+    "branch": "lineage-23.2"
   }
 ]
