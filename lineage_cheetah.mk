@@ -16,12 +16,13 @@ TARGET_HAS_UDFPS := true
 #Camera
 $(call inherit-product-if-exists, vendor/google/camera/config.mk)
 
-
 # Inherit device configuration
 DEVICE_CODENAME := cheetah
 DEVICE_PATH := device/google/pantah
 VENDOR_PATH := vendor/google/cheetah
 $(call inherit-product, $(DEVICE_PATH)/aosp_$(DEVICE_CODENAME).mk)
+
+PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := false
 
 # Device identifier. This must come after all inclusions
 PRODUCT_BRAND := google
