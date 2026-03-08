@@ -13,6 +13,8 @@ $(call inherit-product-if-exists, vendor/google/faceunlock/config.mk)
 #Camera
 $(call inherit-product-if-exists, vendor/google/camera/config.mk)
 
+PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := false
+
 # Infinity-X Flags
 WITH_GAPPS := true
 INFINITY_BUILD_TYPE := UNOFFICIAL

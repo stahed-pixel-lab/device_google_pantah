@@ -7,6 +7,8 @@
 # Inherit some common stuff
 $(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 
+PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := false
+
 # Infinity-X Flags
 WITH_GAPPS := true
 INFINITY_BUILD_TYPE := UNOFFICIAL
