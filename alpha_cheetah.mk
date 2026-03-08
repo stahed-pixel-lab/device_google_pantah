@@ -5,13 +5,45 @@
 #
 
 # Inherit some common stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/alpha/config/common_full_phone.mk)
 
 #Face unlock 
 $(call inherit-product-if-exists, vendor/google/faceunlock/config.mk)
 
 #Camera
 $(call inherit-product-if-exists, vendor/google/camera/config.mk)
+
+# Build config
+
+# TARGET_BUILD_PACKAGE options:
+# 1 - vanilla (default)
+# 2 - microg
+# 3 - gapps
+TARGET_BUILD_PACKAGE := 3
+
+# Launcher
+TARGET_INCLUDE_LAWNCHAIR := false
+
+# (valid only for GAPPS builds)
+TARGET_INCLUDE_PIXEL_LAUNCHER := false
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_SUPPORTS_CALL_RECORDING := true
+TARGET_INCLUDE_STOCK_ARCORE := false
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
+TARGET_SUPPORTS_GOOGLE_RECORDER := false
+
+# Debugging
+TARGET_INCLUDE_MATLOG := true
+WITH_ADB_INSECURE := true
+
+# Extras
+TARGET_INCLUDE_RIMUSIC := true
+
+# Maintainer
+ALPHA_BUILD_TYPE := Official
+ALPHA_MAINTAINER := javi
+WITH_GMS := true
+WITH_PIXEL_OVERLAYS := true
 
 # Inherit device configuration
 DEVICE_CODENAME := cheetah
