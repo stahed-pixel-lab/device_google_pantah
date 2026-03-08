@@ -5,13 +5,23 @@
 #
 
 # Inherit some common stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 
 #Face unlock 
 $(call inherit-product-if-exists, vendor/google/faceunlock/config.mk)
 
 #Camera
 $(call inherit-product-if-exists, vendor/google/camera/config.mk)
+
+# Infinity-X Flags
+WITH_GAPPS := true
+INFINITY_BUILD_TYPE := UNOFFICIAL
+INFINITY_MAINTAINER := Javi
+TARGET_HAS_UDFPS := true
+TARGET_SUPPORTS_GFU := true
+PRODUCT_NO_CAMERA := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_EXCLUDES_AUDIOFX := true
 
 # Inherit device configuration
 DEVICE_CODENAME := cheetah
@@ -22,7 +32,7 @@ $(call inherit-product, $(DEVICE_PATH)/aosp_$(DEVICE_CODENAME).mk)
 # Device identifier. This must come after all inclusions
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 7 Pro
-PRODUCT_NAME := lineage_$(DEVICE_CODENAME)
+PRODUCT_NAME := infinity_$(DEVICE_CODENAME)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 3120

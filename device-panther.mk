@@ -11,8 +11,8 @@ TARGET_KERNEL_DIR := device/google/$(TARGET_KERNEL_DEVICE)-kernels/$(TARGET_LINU
 TARGET_KERNEL_PLATFORM_SOURCE := google/gs-$(TARGET_LINUX_KERNEL_VERSION)
 
 DEVICE_PACKAGE_OVERLAYS += device/google/pantah/panther/overlay
-DEVICE_PACKAGE_OVERLAYS += device/google/pantah/panther/overlay-lineage
-DEVICE_PACKAGE_OVERLAYS += device/google/pantah/overlay-lineage
+DEVICE_PACKAGE_OVERLAYS += device/google/pantah/panther/overlay-infinity
+DEVICE_PACKAGE_OVERLAYS += device/google/pantah/overlay-infinity
 
 include device/google/gs201/device-shipping-common.mk
 
@@ -20,6 +20,9 @@ include device/google/gs201/device-shipping-common.mk
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.prebuilt.xml \
     android.hardware.bluetooth_le.prebuilt.xml
+
+# Always use scudo for memory allocator
+PRODUCT_USE_SCUDO := true
 
 # Recovery files
 PRODUCT_COPY_FILES += \
@@ -98,6 +101,7 @@ include hardware/google/pixel/powershare/device.mk
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/$(DEVICE_CODENAME)/product.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/$(DEVICE_CODENAME)/vendor.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/$(DEVICE_CODENAME)/system.prop
 
 # Sensors
 PRODUCT_PACKAGES += \
