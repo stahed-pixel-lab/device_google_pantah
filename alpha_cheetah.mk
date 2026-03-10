@@ -39,7 +39,7 @@ TARGET_INCLUDE_MATLOG := true
 WITH_ADB_INSECURE := true
 
 # Extras
-TARGET_INCLUDE_RIMUSIC := true
+TARGET_INCLUDE_SIMPLE_TUNE := true
 
 # Maintainer
 ALPHA_BUILD_TYPE := Official
