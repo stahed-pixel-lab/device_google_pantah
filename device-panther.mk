@@ -64,6 +64,10 @@ include hardware/google/pixel/powershare/device.mk
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/$(DEVICE_CODENAME)/product.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/$(DEVICE_CODENAME)/vendor.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/$(DEVICE_CODENAME)/system.prop
+
+# Always use scudo for memory allocator
+PRODUCT_USE_SCUDO := true
 
 # Recovery
 PRODUCT_COPY_FILES += \
