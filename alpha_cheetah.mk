@@ -10,6 +10,9 @@ $(call inherit-product, vendor/alpha/config/common_full_phone.mk)
 # Face unlock 
 $(call inherit-product-if-exists, vendor/google/faceunlock/config.mk)
 
+# Call the BCR setup
+$(call inherit-product-if-exists, vendor/bcr/bcr.mk)
+
 # Camera
 $(call inherit-product-if-exists, vendor/google/camera/config.mk)
 
