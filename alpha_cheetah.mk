@@ -10,6 +10,9 @@ $(call inherit-product, vendor/alpha/config/common_full_phone.mk)
 # Face unlock 
 $(call inherit-product-if-exists, vendor/google/faceunlock/config.mk)
 
+# Camera
+$(call inherit-product-if-exists, vendor/google/camera/config.mk)
+
 PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := false
 
 TARGET_IS_PIXEL_7 := true
