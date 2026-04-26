@@ -11,6 +11,8 @@ TARGET_KERNEL_DEVICE := pantah
 TARGET_KERNEL_DIR := device/google/$(TARGET_KERNEL_DEVICE)-kernels/$(TARGET_LINUX_KERNEL_VERSION)
 TARGET_KERNEL_PLATFORM_SOURCE := google/gs-$(TARGET_LINUX_KERNEL_VERSION)
 
+DEVICE_PACKAGE_OVERLAYS += device/google/pantah/overlay-lineage
+
 # Inherit from gs201
 include device/google/gs201/common.mk
 
