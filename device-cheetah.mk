@@ -17,6 +17,9 @@ include device/google/gs201/common.mk
 # MindGapps
 $(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
 
+# PixelParts 
+include packages/apps/PixelParts/device.mk
+
 # Overlays
 PRODUCT_PACKAGES += \
     FrameworkResOverlayProductPantah \
