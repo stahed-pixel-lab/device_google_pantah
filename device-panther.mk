@@ -14,6 +14,9 @@ TARGET_KERNEL_PLATFORM_SOURCE := google/gs-$(TARGET_LINUX_KERNEL_VERSION)
 # Inherit from gs201
 include device/google/gs201/common.mk
 
+# MindGapps
+$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+
 # Overlays
 PRODUCT_PACKAGES += \
     FrameworkResOverlayProductPantah \
